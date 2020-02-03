@@ -41,7 +41,7 @@ set hlsearch
 
 let mapleader=","
 nnoremap <leader><space> :nohls<CR>
-nnoremap <leader>f :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
