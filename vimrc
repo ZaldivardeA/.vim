@@ -22,9 +22,13 @@ filetype plugin indent on    " required
 colorscheme badwolf
 syntax enable
 
-set tabstop=4   " number of visual spaces per TAB
-set softtabstop=4
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
 set expandtab
+set softtabstop=4
 
 set number relativenumber
 set nu rnu
@@ -58,7 +62,6 @@ set foldmethod=indent
 " Formatter options
 " format on save .js
 autocmd BufWritePre *.js undojoin | Neoformat
-let g:neoformat_enabled_javascript = ['prettier']
 nnoremap <leader>f :Neoformat<CR>
 augroup NeoformatAutoFormat
     autocmd!
