@@ -55,4 +55,4 @@ set foldmethod=indent
 
 " Formatter options
 " format on save .js
-autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.js undojoin | Neoformat
