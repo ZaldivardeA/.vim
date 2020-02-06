@@ -56,3 +56,5 @@ set foldmethod=indent
 " Formatter options
 " format on save .js
 autocmd BufWritePre *.js undojoin | Neoformat
+let g:neoformat_enabled_javascript = ['prettier']
+nnoremap <leader>f :Neoformat<CR>
