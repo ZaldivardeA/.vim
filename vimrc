@@ -12,6 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'preservim/nerdtree'
 Plugin 'sbdchd/neoformat'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,3 +60,14 @@ set foldmethod=indent
 autocmd BufWritePre *.js undojoin | Neoformat
 let g:neoformat_enabled_javascript = ['prettier']
 nnoremap <leader>f :Neoformat<CR>
+augroup NeoformatAutoFormat
+    autocmd!
+    autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\
+                                             \--stdin\
+                                             \--print-width\ 80\
+                                             \--single-quote\
+                                             \--trailing-comma\ es5
+    autocmd BufWritePre *.js,*.jsx Neoformat
+augroup END
+" Use formatprg when available
+let g:neoformat_try_formatprg = 1
