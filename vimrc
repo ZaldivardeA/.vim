@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'preservim/nerdtree'
+Plugin 'sbdchd/neoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,3 +53,6 @@ set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
 
+" Formatter options
+" format on save .js
+autocmd BufWritePre *.js Neoformat
