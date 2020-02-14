@@ -19,8 +19,8 @@ Plugin 'mxw/vim-jsx'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-set termguicolors
-colorscheme nightfly
+" set termguicolors
+colorscheme badwolf
 syntax enable
 
 " show existing tab with 4 spaces width
