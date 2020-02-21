@@ -1,3 +1,4 @@
+" run this git submodule update --init --recursive
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
