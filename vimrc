@@ -49,6 +49,7 @@ set showmatch
 
 set incsearch
 set hlsearch
+let g:airline_powerline_fonts = 1
 
 let mapleader=","
 nnoremap <leader><space> :nohls<CR>
