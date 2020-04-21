@@ -24,6 +24,10 @@ Plugin 'doums/coBra'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" fixes glitch? in colors when using vim with tmux
+set background=dark
+set t_Co=256
+
 set termguicolors
 colorscheme nightfly
 syntax enable
