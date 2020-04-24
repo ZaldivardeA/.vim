@@ -27,7 +27,7 @@ filetype plugin indent on    " required
 " fixes glitch? in colors when using vim with tmux
 set background=dark
 set t_Co=256
-set scrolloff=12
+set scrolloff=10
 
 set termguicolors
 colorscheme nightfly
@@ -60,29 +60,53 @@ let g:airline_powerline_fonts = 1
 
 let mapleader=","
 nnoremap <leader><space> :nohls<CR>
-nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>tt :NERDTreeToggle<CR>
 
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Split options
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Open new split in left and button
+set splitbelow splitright
+
+" Movement in splits with control + jklh
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Make adjusting split sizes a little more friendly
+nnoremap <Leader>a :vertical resize -3<CR>
+nnoremap <Leader>d :vertical resize +3<CR>
+nnoremap <Leader>w :resize +3<CR>
+nnoremap <Leader>s :resize -3<CR>
+
+noremap <A-a> :hola
+
+" Go from vert to horz
+noremap <Leader>th <C-w>t<C-w>H
+noremap <Leader>tk <C-w>t<C-w>K
+
+""""""""""""""""""""""""""""""""""""""""""""""""
 " Formatter options
+""""""""""""""""""""""""""""""""""""""""""""""""
+
 " format on save .js
 autocmd BufWritePre *.js undojoin | Neoformat
 nnoremap <leader>f :Neoformat<CR>
 augroup NeoformatAutoFormat
-    autocmd!
-    autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\
-                                             \--stdin\
-                                             \--print-width\ 80\
-                                             \--single-quote\
-                                             \--trailing-comma\ es5
-    autocmd BufWritePre *.js,*.jsx Neoformat
+  autocmd!
+  autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\
+                                           \--stdin\
+                                           \--print-width\ 80\
+                                           \--single-quote\
+                                           \--trailing-comma\ es5
+  autocmd BufWritePre *.js,*.jsx Neoformat
 augroup END
 " Use formatprg when available
 let g:neoformat_try_formatprg = 1
