@@ -1,4 +1,5 @@
 bundle/*
+plugged/*
 !bundle/Vundle.vim
 !bundle/.vundle
 *.swp
